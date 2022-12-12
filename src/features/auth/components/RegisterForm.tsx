@@ -13,9 +13,10 @@ const RegisterForm = (props: Props) => {
     // const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
+        username: "",
         email: "",
         password: "",
-    })
+    });
 
     const handleChange = (event: any) => {
         const name = event.target.name;

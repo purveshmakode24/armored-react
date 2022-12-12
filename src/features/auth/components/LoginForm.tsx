@@ -15,7 +15,7 @@ const LoginForm = () => {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
-    })
+    });
 
     const handleChange = (event: any) => {
         const name = event.target.name;
