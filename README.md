@@ -1,6 +1,6 @@
 # armored-react 🛡️ ⚛️
 
-[![MIT License](https://img.shields.io/github/license/purveshmakode24/armored-react?style=flat-square)](https://github.com/purveshmakode24/armored-react/blob/main/LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/purveshmakode24/armored-react/blob/main/LICENSE)
 
 A simple, scalable, and powerful architecture for building React applications.
 
