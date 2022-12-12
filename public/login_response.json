@@ -1,0 +1,11 @@
+{
+    "username": "purvesh24",
+    "role": "admin",
+    "menu": [
+        {
+            "label": "Dashboard",
+            "icon": "pi pi-fw pi-home",
+            "url": "/dashboard"
+        }
+    ]
+}
