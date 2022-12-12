@@ -1,4 +1,4 @@
-# armored-react 🛡️ ⚛️
+# armored-react 🛡️⚛️
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/purveshmakode24/armored-react/blob/main/LICENSE)
 
