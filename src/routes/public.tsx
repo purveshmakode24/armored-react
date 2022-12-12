@@ -15,4 +15,4 @@ export const publicRoutes = [
         path: "/register",
         element: <RegisterForm />
     },
-]
+];

@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../../AppContext';
 import { User } from '../../../utils/types';
 import AuthService from '../auth.service';
-import { InputText } from 'primereact/inputtext'
-import { Button } from 'primereact/button'
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
 // import { getAuthHomeRoute } from '../../../utils/commons';
 
 
@@ -61,4 +61,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm
+export default LoginForm;

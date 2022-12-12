@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
-import { InputText } from 'primereact/inputtext'
-import { Button } from 'primereact/button'
-import { AppContext } from '../../../AppContext';
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
+// import { AppContext } from '../../../AppContext';
 // import { User } from '../../../utils/types';
 // import AuthService from '../auth.service';
 
@@ -64,4 +64,4 @@ const RegisterForm = (props: Props) => {
     )
 }
 
-export default RegisterForm
+export default RegisterForm;

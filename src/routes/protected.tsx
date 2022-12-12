@@ -23,7 +23,7 @@ export const ProtectedRoutes = (role: string) => {
             element: <Dashboard />,
             allowedRoles: [ROLES.ADMIN],
         }
-    ]
+    ];
 
     const protectedRoutes = allProtectedRoutes.filter((route: any) =>
         route.allowedRoles.includes(role)

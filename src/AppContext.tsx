@@ -16,7 +16,6 @@ const AppContextDefaultValues: AppContextType = {
     setCount: () => { },
 };
 
-
 export const AppContext = React.createContext<AppContextType>(
     AppContextDefaultValues
 );
