@@ -58,7 +58,7 @@ const RegisterForm = (props: Props) => {
                     onChange={handleChange}
                     required
                 />
-                <Button className="mt-2" type="submit" label="Login" />
+                <Button className="mt-2" type="submit" label="Submit" />
             </div>
         </form>
     )
