@@ -1,10 +1,12 @@
 
 import React from 'react';
 import { Navigate } from "react-router-dom";
+import { AdminRoutes } from '../features/admin';
+import { UserRoutes } from '../features/user';
 import { getAuthHomeRoute, ROLES } from "../utils/commons";
 
-const Dashboard = React.lazy(() => import("../features/pages/admin/Dashboard"));
-const Home = React.lazy(() => import("../features/pages/user/Home"));
+// const Dashboard = React.lazy(() => import("../features/admin/Dashboard"));
+// const Home = React.lazy(() => import("../features/user/Home"));
 
 export const ProtectedRoutes = (role: string) => {
     const allProtectedRoutes = [
@@ -14,13 +16,13 @@ export const ProtectedRoutes = (role: string) => {
             allowedRoles: [ROLES.ADMIN, ROLES.USER],
         },
         {
-            path: "/home",
-            element: <Home />,
+            path: "/user/*",
+            element: <UserRoutes />,
             allowedRoles: [ROLES.USER],
         },
         {
-            path: "/dashboard",
-            element: <Dashboard />,
+            path: "/admin/*",
+            element: <AdminRoutes />,
             allowedRoles: [ROLES.ADMIN],
         }
     ];

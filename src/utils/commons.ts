@@ -10,10 +10,10 @@ export const add = (x: number, y: number) => {
 export const getAuthHomeRoute = (role: string | undefined) => {
     switch (role) {
         case ROLES.ADMIN: {
-            return "/dashboard";
+            return "/admin/dashboard";
         }
         case ROLES.USER: {
-            return "/home";
+            return "/user/home";
         }
         default:
             return "/";

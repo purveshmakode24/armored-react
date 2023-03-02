@@ -1,13 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import PageNotFound from "../../../components/PageNotFound";
-import Login from "./Login";
-import Register from "./Register";
+import Dashboard from "../components/Dashboard";
 
-export const AuthRoutes = () => {
+export const AdminRoutes = () => {
     return (
         <Routes>
-            <Route path="login" element={< Login />} />
-            <Route path="register" element={< Register />} />
+            <Route path="dashboard" element={< Dashboard />} />
             <Route path="*" element={<PageNotFound />} />
         </ Routes>
     );

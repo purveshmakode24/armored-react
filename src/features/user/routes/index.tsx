@@ -1,13 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import PageNotFound from "../../../components/PageNotFound";
-import Login from "./Login";
-import Register from "./Register";
+import Home from "../components/Home";
 
-export const AuthRoutes = () => {
+export const UserRoutes = () => {
     return (
         <Routes>
-            <Route path="login" element={< Login />} />
-            <Route path="register" element={< Register />} />
+            <Route path="home" element={< Home />} />
             <Route path="*" element={<PageNotFound />} />
         </ Routes>
     );

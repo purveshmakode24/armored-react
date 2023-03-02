@@ -5,7 +5,7 @@
         {
             "label": "Dashboard",
             "icon": "pi pi-fw pi-home",
-            "url": "/dashboard"
+            "url": "/admin/dashboard"
         }
     ]
 }
