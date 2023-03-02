@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppContext } from '../AppContext';
-import AuthService from '../features/auth/auth.service';
+import AuthService from '../features/auth/service';
 
 const Header = () => {
     const { currentUser } = useContext(AppContext);
@@ -55,7 +55,7 @@ const Header = () => {
                             <>
                                 <li className="nav-item m-2">
                                     <NavLink
-                                        to='/login'
+                                        to='/auth/login'
                                         style={({ isActive }) =>
                                             isActive ? { color: "black" } : undefined
                                         }>
@@ -64,7 +64,7 @@ const Header = () => {
                                 </li>
                                 <li className="nav-item m-2">
                                     <NavLink
-                                        to='/register'
+                                        to='/auth/register'
                                         style={({ isActive }) =>
                                             isActive ? { color: "black" } : undefined
                                         }>

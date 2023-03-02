@@ -3,6 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 import Header from './Header'
 import Footer from './Footer'
 import { AppRoutes } from '../routes'
+import { Suspense } from 'react'
 
 const MainLayout = () => {
     const ErrorFallback = ({ error, resetErrorBoundary }: any) => {
@@ -19,11 +20,13 @@ const MainLayout = () => {
         <>
             <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <BrowserRouter>
-                    <Header />
-                    <section style={{ minHeight: "600px", padding: "30px" }}>
-                        <AppRoutes />
-                    </section>
-                    <Footer />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Header />
+                        <section style={{ minHeight: "600px", padding: "30px" }}>
+                            <AppRoutes />
+                        </section>
+                        <Footer />
+                    </Suspense>
                 </BrowserRouter>
             </ErrorBoundary>
         </>

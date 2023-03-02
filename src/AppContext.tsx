@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AuthService from "./features/auth/auth.service";
+import AuthService from "./features/auth/service";
 import { User } from "./utils/types";
 
 type AppContextType = {

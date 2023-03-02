@@ -1,11 +1,12 @@
 import axios from "axios";
-import storage from "../../utils/storage";
-import { LoginDTO, RegisterDTO, User } from "../../utils/types";
+import { API_AUTH_URL } from "../../../config";
+import storage from "../../../utils/storage";
+import { LoginDTO, RegisterDTO, User } from "../../../utils/types";
 
-const API_ROOT_URL = "https://localhost:8080/api/auth/";
+// const API_ROOT_URL = "https://localhost:8080/api/auth/";
 
 const register = (payload: RegisterDTO) => {
-    return axios.post(API_ROOT_URL + "register", payload);
+    return axios.post(API_AUTH_URL + "register", payload);
 }
 
 const login = (payload: LoginDTO) => {
@@ -14,7 +15,7 @@ const login = (payload: LoginDTO) => {
             xyz: "1234"
         }
     }
-    return axios.get("login_response.json", config).then((response: any) => {
+    return axios.get("../login_response.json", config).then((response: any) => {
         if (response.data) {
             storage.setItem("_current_user", JSON.stringify(response.data));
         }
@@ -28,7 +29,7 @@ const logout = () => {
 
 const getCurrentUser = () => {
     const _user = storage.getItem("_current_user");
-    return _user
+    return _user;
 }
 
 const AuthService = {
@@ -36,6 +37,6 @@ const AuthService = {
     login,
     logout,
     getCurrentUser
-}
+};
 
 export default AuthService;
