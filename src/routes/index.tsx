@@ -1,16 +1,16 @@
-import { useContext } from "react";
 import { useRoutes } from "react-router-dom";
-import { AppContext } from "../AppContext";
+import { useAppContext } from "../AppContext";
 import PageNotFound from "../components/PageNotFound";
-import { ProtectedRoutes } from "./protected";
 import { publicRoutes } from "./public";
+import { protectedRoutes } from "./protected";
 
 export const AppRoutes = () => {
-    const { currentUser } = useContext(AppContext)
+    const { currentUser } = useAppContext();
 
     const commonRoutes = [{ path: '*', element: <PageNotFound /> }];
 
-    const routes = currentUser ? ProtectedRoutes(currentUser.role) : publicRoutes;
+    //const routes = currentUser ? ProtectedRoutes(currentUser.role) : publicRoutes;
+    const routes = currentUser ? protectedRoutes : publicRoutes;
 
     const element = useRoutes([...routes, ...commonRoutes]);
 

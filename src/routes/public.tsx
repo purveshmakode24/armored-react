@@ -1,10 +1,7 @@
-import React from "react";
-import LoginForm from "../features/auth/components/LoginForm";
-import RegisterForm from "../features/auth/components/RegisterForm";
+import { lazyImport } from "@/utils/lazyImport";
 import { Navigate } from "react-router-dom"
-import { AuthRoutes } from "../features/auth";
 
-// const AuthRoutes = React.lazy(()=> import("../features/auth"));
+const { AuthRoutes } = lazyImport(() => import("@/features/auth"), "AuthRoutes");
 
 export const publicRoutes = [
     {

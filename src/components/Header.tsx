@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AppContext } from '../AppContext';
-import AuthService from '../features/auth/service';
+import AuthService from '@/features/auth/service';
+import { useAppContext } from '@/AppContext';
 
 const Header = () => {
-    const { currentUser } = useContext(AppContext);
-    const { count } = useContext(AppContext)
+    const { currentUser, count } = useAppContext();
 
     const handleLogout = () => {
         AuthService.logout();

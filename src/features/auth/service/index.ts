@@ -1,7 +1,7 @@
 import axios from "axios";
-import { API_AUTH_URL } from "../../../config";
-import storage from "../../../utils/storage";
-import { LoginDTO, RegisterDTO, User } from "../../../utils/types";
+import { API_AUTH_URL, HOME_ROUTES, ROLES } from "../../../config";
+import { LoginDTO, RegisterDTO } from "@/utils/types";
+import storage from "@/utils/storage";
 
 // const API_ROOT_URL = "https://localhost:8080/api/auth/";
 
@@ -15,7 +15,7 @@ const login = (payload: LoginDTO) => {
             xyz: "1234"
         }
     }
-    return axios.get("../login_response.json", config).then((response: any) => {
+    return axios.get("../test_jsons/login_response.json", config).then((response: any) => {
         if (response.data) {
             storage.setItem("_current_user", JSON.stringify(response.data));
         }
@@ -32,11 +32,25 @@ const getCurrentUser = () => {
     return _user;
 }
 
+export const getAuthHomeRoute = (role: string | undefined) => {
+    switch (role) {
+        case ROLES.ADMIN: {
+            return HOME_ROUTES.ADMIN;
+        }
+        case ROLES.USER: {
+            return HOME_ROUTES.USER;
+        }
+        default:
+            return "/";
+    }
+}
+
 const AuthService = {
     register,
     login,
     logout,
-    getCurrentUser
+    getCurrentUser,
+    getAuthHomeRoute
 };
 
 export default AuthService;

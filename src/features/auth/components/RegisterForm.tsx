@@ -1,10 +1,6 @@
-import React, { useContext, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-// import { AppContext } from '../../../AppContext';
-// import { User } from '../../../utils/types';
-// import AuthService from '../auth.service';
 
 type Props = {}
 
