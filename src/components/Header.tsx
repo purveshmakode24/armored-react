@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import AuthService from '@/features/auth/service';
 import { useAppContext } from '@/AppContext';
+import { useAdminContext } from '@/features/admin/context';
 
 const Header = () => {
-    const { currentUser, count } = useAppContext();
+    const { currentUser } = useAppContext();
+    const { count } = useAdminContext();
 
     const handleLogout = () => {
         AuthService.logout();
@@ -13,7 +14,7 @@ const Header = () => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">Armored React {count}</a>
+            <a className="navbar-brand" href="/">Armored React {count}</a>
             <button
                 className="navbar-toggler"
                 type="button"

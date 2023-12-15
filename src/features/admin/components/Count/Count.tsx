@@ -1,11 +1,11 @@
-import { useAppContext } from '@/AppContext';
 import { Button } from 'primereact/button';
 import React from 'react';
+import { useAdminContext } from '../../context';
 
 type CountProps = {};
 
 const Count = (props: CountProps) => {
-  const { count, setCount } = useAppContext();
+  const { count, setCount, } = useAdminContext();
 
   const handleIncrement = () => {
     setCount(count + 1);

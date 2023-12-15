@@ -7,15 +7,11 @@ import { UserContextProvider } from "./features/user/context";
 type AppContextType = {
     currentUser: User;
     setCurrentUser: (c: User) => void;
-    count: number;
-    setCount: (c: number) => void;
 };
 
 const defaultValues: AppContextType = {
     currentUser: null,
-    setCurrentUser: () => { },
-    count: 0,
-    setCount: () => { },
+    setCurrentUser: () => { }
 };
 
 const AppContext = React.createContext<AppContextType>(
@@ -24,13 +20,10 @@ const AppContext = React.createContext<AppContextType>(
 
 const AppContextProvider = ({ children }: any) => {
     const [currentUser, setCurrentUser] = useState(AuthService.getCurrentUser());
-    const [count, setCount] = useState(0);
 
     const globalValues: AppContextType = {
         currentUser,
-        setCurrentUser,
-        count,
-        setCount
+        setCurrentUser
     };
 
     return (
